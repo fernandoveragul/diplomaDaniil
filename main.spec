@@ -37,7 +37,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['static/files/icon.png'],
+    icon=['static/files/aikko.ico'],
 )
 coll = COLLECT(
     exe,

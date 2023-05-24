@@ -11,11 +11,10 @@ from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import QMainWindow, QLayout, QPushButton, QMessageBox, QFileDialog
 
 from display.main_window import Ui_MainWindow
-from .dependencies import design_style
 from .dependencies.depends import Files
 from .dependencies.schemas import STest, SQuestion, SAnswer
 from .test_win import Test
-from qt_material import list_themes
+
 
 class Application(QMainWindow, Ui_MainWindow, Files):
     def __init__(self):
@@ -31,7 +30,6 @@ class Application(QMainWindow, Ui_MainWindow, Files):
 
         self.setWindowTitle('Учебное пособие "Поддержка и тестирование программных модулей"')
         self.setWindowIcon(QtGui.QIcon(f'{self.path_to_icon()}'))
-        # self.setStyleSheet(design_style.DESIGN_STYLE)
 
     def __create_buttons(self, layout: QLayout, folder: str):
         def add_func(ind: int):
