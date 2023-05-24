@@ -5,6 +5,7 @@ import shutil
 from functools import partial
 from pathlib import Path
 
+from PySide6 import QtGui
 from PySide6.QtCore import QUrl
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import QMainWindow, QLayout, QPushButton, QMessageBox, QFileDialog
@@ -28,6 +29,8 @@ class Application(QMainWindow, Ui_MainWindow, Files):
         self.__enable_runtime_rbuttons()
         self.__enable_funcs_in_buttons()
 
+        self.setWindowTitle('Учебное пособие "Поддержка и тестирование программных модулей"')
+        self.setWindowIcon(QtGui.QIcon(f'{self.path_to_icon()}'))
         self.setStyleSheet(design_style.DESIGN_STYLE)
 
     def __create_buttons(self, layout: QLayout, folder: str):
@@ -81,6 +84,7 @@ class Application(QMainWindow, Ui_MainWindow, Files):
 
     def __enable_funcs_in_buttons(self):
         self.btnTest.clicked.connect(self.__open_window_with_current_test)
+        self.btnStartApp.clicked.connect(lambda: self.stackApp.setCurrentWidget(self.pgApp))
         self.btnLogin.clicked.connect(lambda: self.__login_admin())
 
         self.btnShowExample.clicked.connect(lambda: self.stckStudent.setCurrentWidget(self.pgExample))

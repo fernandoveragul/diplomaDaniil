@@ -37,6 +37,7 @@ class Test(QWidget, Ui_Form, Files):
         self.setup_non_interactive_elements()
         self.setup_placeholders()
 
+        self.setWindowTitle('Тестирование')
         self.setWindowIcon(QtGui.QIcon(f'{self.path_to_icon()}'))
 
     def setup_interactive_elements(self):
