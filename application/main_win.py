@@ -15,7 +15,7 @@ from .dependencies import design_style
 from .dependencies.depends import Files
 from .dependencies.schemas import STest, SQuestion, SAnswer
 from .test_win import Test
-
+from qt_material import list_themes
 
 class Application(QMainWindow, Ui_MainWindow, Files):
     def __init__(self):
@@ -31,7 +31,7 @@ class Application(QMainWindow, Ui_MainWindow, Files):
 
         self.setWindowTitle('Учебное пособие "Поддержка и тестирование программных модулей"')
         self.setWindowIcon(QtGui.QIcon(f'{self.path_to_icon()}'))
-        self.setStyleSheet(design_style.DESIGN_STYLE)
+        # self.setStyleSheet(design_style.DESIGN_STYLE)
 
     def __create_buttons(self, layout: QLayout, folder: str):
         def add_func(ind: int):
@@ -56,8 +56,8 @@ class Application(QMainWindow, Ui_MainWindow, Files):
                     btn_text = f'ГЛАВА {cu}'
                 case 'examples':
                     btn_text = f'ЗАДАНИЕ К ГЛАВЕ {cu}'
-                case 'tests':
-                    btn_text = f'ТЕСТ К ГЛАВЕ {cu}'
+                case 'methodist':
+                    btn_text = f'МЕТОДИЧЕСКИЕ МАТЕРИАЛЫ {cu}'
             btn.setText(btn_text)
             index = i
             btn.clicked.connect(partial(add_func, index))

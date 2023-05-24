@@ -20,7 +20,7 @@ class Files:
     @staticmethod
     def files_without_extension(folder: str) -> list[str]:
         path: str = f'{Path(Path.cwd(), "static", folder)}'
-        return list(map(lambda file_name: file_name.split('.')[0], os.listdir(path)))
+        return list(map(lambda file_name: file_name.split('.')[0], sorted(os.listdir(path))))
 
     @staticmethod
     def save_current_test(name: str, test: STest) -> None:

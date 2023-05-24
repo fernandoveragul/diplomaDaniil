@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(870, 574)
+        MainWindow.resize(909, 574)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         font = QFont()
@@ -175,7 +175,7 @@ class Ui_MainWindow(object):
         self.scrollExample.setWidgetResizable(True)
         self.areaExample = QWidget()
         self.areaExample.setObjectName(u"areaExample")
-        self.areaExample.setGeometry(QRect(0, 0, 98, 28))
+        self.areaExample.setGeometry(QRect(0, 0, 147, 467))
         self.layExample = QVBoxLayout(self.areaExample)
         self.layExample.setObjectName(u"layExample")
         self.scrollExample.setWidget(self.areaExample)
@@ -203,7 +203,7 @@ class Ui_MainWindow(object):
         self.scrollMethodistPr.setWidgetResizable(True)
         self.areaMethodist = QWidget()
         self.areaMethodist.setObjectName(u"areaMethodist")
-        self.areaMethodist.setGeometry(QRect(0, 0, 98, 28))
+        self.areaMethodist.setGeometry(QRect(0, 0, 222, 501))
         self.layMethodist = QVBoxLayout(self.areaMethodist)
         self.layMethodist.setObjectName(u"layMethodist")
         self.scrollMethodistPr.setWidget(self.areaMethodist)
@@ -217,8 +217,11 @@ class Ui_MainWindow(object):
 
         self.pdfMethodist = QWebEngineView(self.pgMethodist)
         self.pdfMethodist.setObjectName(u"pdfMethodist")
-        sizePolicy1.setHeightForWidth(self.pdfMethodist.sizePolicy().hasHeightForWidth())
-        self.pdfMethodist.setSizePolicy(sizePolicy1)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(3)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.pdfMethodist.sizePolicy().hasHeightForWidth())
+        self.pdfMethodist.setSizePolicy(sizePolicy3)
         self.pdfMethodist.setUrl(QUrl(u"about:blank"))
 
         self.gridLayout_7.addWidget(self.pdfMethodist, 0, 1, 3, 1)
@@ -280,6 +283,89 @@ class Ui_MainWindow(object):
         self.pgCreate.setObjectName(u"pgCreate")
         self.gridLayout_5 = QGridLayout(self.pgCreate)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.line = QFrame(self.pgCreate)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.VLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.gridLayout_5.addWidget(self.line, 0, 1, 10, 1)
+
+        self.ledtAnswerFour = QLineEdit(self.pgCreate)
+        self.ledtAnswerFour.setObjectName(u"ledtAnswerFour")
+        self.ledtAnswerFour.setFont(font2)
+        self.ledtAnswerFour.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_5.addWidget(self.ledtAnswerFour, 9, 2, 1, 3)
+
+        self.line_3 = QFrame(self.pgCreate)
+        self.line_3.setObjectName(u"line_3")
+        self.line_3.setFrameShape(QFrame.HLine)
+        self.line_3.setFrameShadow(QFrame.Sunken)
+
+        self.gridLayout_5.addWidget(self.line_3, 1, 2, 1, 3)
+
+        self.ledtAnswerFirst = QLineEdit(self.pgCreate)
+        self.ledtAnswerFirst.setObjectName(u"ledtAnswerFirst")
+        self.ledtAnswerFirst.setFont(font2)
+        self.ledtAnswerFirst.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_5.addWidget(self.ledtAnswerFirst, 6, 2, 1, 3)
+
+        self.verticalSpacer_9 = QSpacerItem(20, 36, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout_5.addItem(self.verticalSpacer_9, 3, 0, 1, 1)
+
+        self.line_2 = QFrame(self.pgCreate)
+        self.line_2.setObjectName(u"line_2")
+        self.line_2.setFrameShape(QFrame.HLine)
+        self.line_2.setFrameShadow(QFrame.Sunken)
+
+        self.gridLayout_5.addWidget(self.line_2, 4, 0, 1, 1)
+
+        self.ledtAnswerThird = QLineEdit(self.pgCreate)
+        self.ledtAnswerThird.setObjectName(u"ledtAnswerThird")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.ledtAnswerThird.sizePolicy().hasHeightForWidth())
+        self.ledtAnswerThird.setSizePolicy(sizePolicy4)
+        self.ledtAnswerThird.setFont(font2)
+        self.ledtAnswerThird.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_5.addWidget(self.ledtAnswerThird, 8, 2, 1, 3)
+
+        self.btnEndCreateTest = QPushButton(self.pgCreate)
+        self.btnEndCreateTest.setObjectName(u"btnEndCreateTest")
+        self.btnEndCreateTest.setFont(font2)
+
+        self.gridLayout_5.addWidget(self.btnEndCreateTest, 0, 4, 1, 1)
+
+        self.ledtAnswerSecond = QLineEdit(self.pgCreate)
+        self.ledtAnswerSecond.setObjectName(u"ledtAnswerSecond")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.ledtAnswerSecond.sizePolicy().hasHeightForWidth())
+        self.ledtAnswerSecond.setSizePolicy(sizePolicy5)
+        self.ledtAnswerSecond.setFont(font2)
+        self.ledtAnswerSecond.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_5.addWidget(self.ledtAnswerSecond, 7, 2, 1, 3)
+
+        self.ledtTimeToDo = QLineEdit(self.pgCreate)
+        self.ledtTimeToDo.setObjectName(u"ledtTimeToDo")
+        self.ledtTimeToDo.setFont(font2)
+        self.ledtTimeToDo.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_5.addWidget(self.ledtTimeToDo, 0, 2, 1, 1)
+
+        self.line_4 = QFrame(self.pgCreate)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setFrameShape(QFrame.HLine)
+        self.line_4.setFrameShadow(QFrame.Sunken)
+
+        self.gridLayout_5.addWidget(self.line_4, 4, 2, 1, 3)
+
         self.gboxFileWorkers = QGroupBox(self.pgCreate)
         self.gboxFileWorkers.setObjectName(u"gboxFileWorkers")
         font3 = QFont()
@@ -331,19 +417,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.gboxFileWorkers, 0, 0, 3, 1)
 
-        self.line = QFrame(self.pgCreate)
-        self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.VLine)
-        self.line.setFrameShadow(QFrame.Sunken)
+        self.ptedQuestion = QPlainTextEdit(self.pgCreate)
+        self.ptedQuestion.setObjectName(u"ptedQuestion")
+        self.ptedQuestion.viewport().setProperty("cursor", QCursor(Qt.IBeamCursor))
+        self.ptedQuestion.setFrameShape(QFrame.StyledPanel)
 
-        self.gridLayout_5.addWidget(self.line, 0, 1, 10, 1)
-
-        self.ledtTimeToDo = QLineEdit(self.pgCreate)
-        self.ledtTimeToDo.setObjectName(u"ledtTimeToDo")
-        self.ledtTimeToDo.setFont(font2)
-        self.ledtTimeToDo.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_5.addWidget(self.ledtTimeToDo, 0, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.ptedQuestion, 2, 2, 2, 3)
 
         self.btnAddQuestion = QPushButton(self.pgCreate)
         self.btnAddQuestion.setObjectName(u"btnAddQuestion")
@@ -351,36 +430,9 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.btnAddQuestion, 0, 3, 1, 1)
 
-        self.btnEndCreateTest = QPushButton(self.pgCreate)
-        self.btnEndCreateTest.setObjectName(u"btnEndCreateTest")
-        self.btnEndCreateTest.setFont(font2)
+        self.verticalSpacer_6 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout_5.addWidget(self.btnEndCreateTest, 0, 4, 1, 1)
-
-        self.line_3 = QFrame(self.pgCreate)
-        self.line_3.setObjectName(u"line_3")
-        self.line_3.setFrameShape(QFrame.HLine)
-        self.line_3.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout_5.addWidget(self.line_3, 1, 2, 1, 3)
-
-        self.verticalSpacer_9 = QSpacerItem(20, 36, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_5.addItem(self.verticalSpacer_9, 3, 0, 1, 1)
-
-        self.line_2 = QFrame(self.pgCreate)
-        self.line_2.setObjectName(u"line_2")
-        self.line_2.setFrameShape(QFrame.HLine)
-        self.line_2.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout_5.addWidget(self.line_2, 4, 0, 1, 1)
-
-        self.line_4 = QFrame(self.pgCreate)
-        self.line_4.setObjectName(u"line_4")
-        self.line_4.setFrameShape(QFrame.HLine)
-        self.line_4.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout_5.addWidget(self.line_4, 4, 2, 1, 3)
+        self.gridLayout_5.addItem(self.verticalSpacer_6, 10, 2, 1, 1)
 
         self.groupBox = QGroupBox(self.pgCreate)
         self.groupBox.setObjectName(u"groupBox")
@@ -413,52 +465,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.rbtnAnswerFour)
 
 
-        self.gridLayout_5.addWidget(self.groupBox, 6, 0, 4, 1)
-
-        self.ledtAnswerFirst = QLineEdit(self.pgCreate)
-        self.ledtAnswerFirst.setObjectName(u"ledtAnswerFirst")
-        self.ledtAnswerFirst.setFont(font2)
-        self.ledtAnswerFirst.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_5.addWidget(self.ledtAnswerFirst, 6, 2, 1, 3)
-
-        self.ledtAnswerSecond = QLineEdit(self.pgCreate)
-        self.ledtAnswerSecond.setObjectName(u"ledtAnswerSecond")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.ledtAnswerSecond.sizePolicy().hasHeightForWidth())
-        self.ledtAnswerSecond.setSizePolicy(sizePolicy3)
-        self.ledtAnswerSecond.setFont(font2)
-        self.ledtAnswerSecond.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_5.addWidget(self.ledtAnswerSecond, 7, 2, 1, 3)
-
-        self.ledtAnswerThird = QLineEdit(self.pgCreate)
-        self.ledtAnswerThird.setObjectName(u"ledtAnswerThird")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.ledtAnswerThird.sizePolicy().hasHeightForWidth())
-        self.ledtAnswerThird.setSizePolicy(sizePolicy4)
-        self.ledtAnswerThird.setFont(font2)
-        self.ledtAnswerThird.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_5.addWidget(self.ledtAnswerThird, 8, 2, 1, 3)
-
-        self.ledtAnswerFour = QLineEdit(self.pgCreate)
-        self.ledtAnswerFour.setObjectName(u"ledtAnswerFour")
-        self.ledtAnswerFour.setFont(font2)
-        self.ledtAnswerFour.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_5.addWidget(self.ledtAnswerFour, 9, 2, 1, 3)
-
-        self.ptedQuestion = QPlainTextEdit(self.pgCreate)
-        self.ptedQuestion.setObjectName(u"ptedQuestion")
-        self.ptedQuestion.viewport().setProperty("cursor", QCursor(Qt.IBeamCursor))
-        self.ptedQuestion.setFrameShape(QFrame.StyledPanel)
-
-        self.gridLayout_5.addWidget(self.ptedQuestion, 2, 2, 2, 3)
+        self.gridLayout_5.addWidget(self.groupBox, 6, 0, 5, 1)
 
         self.stackProfessor.addWidget(self.pgCreate)
         self.pgEdit = QWidget()
@@ -524,6 +531,7 @@ class Ui_MainWindow(object):
         self.btnGoToStartState.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0415\u0420\u041d\u0423\u0422\u042c\u0421\u042f", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tbStudent), QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0443\u0434\u0435\u043d\u0442\u0443", None))
         self.btnLogin.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0412\u0422\u041e\u0420\u0418\u0417\u0410\u0426\u0418\u042f", None))
+        self.btnEndCreateTest.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0410\u041a\u041e\u041d\u0427\u0418\u0422\u042c \u0422\u0415\u0421\u0422", None))
         self.gboxFileWorkers.setTitle(QCoreApplication.translate("MainWindow", u"\u0424\u0410\u0419\u041b\u042b", None))
         self.btnAddTutorial.setText(QCoreApplication.translate("MainWindow", u"\u0414\u041e\u0411\u0410\u0412\u0418\u0422\u042c \u0422\u0415\u041e\u0420\u0418\u042e", None))
         self.btnDelTutorial.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0414\u0410\u041b\u0418\u0422\u042c \u0422\u0415\u041e\u0420\u0418\u042e", None))
@@ -533,7 +541,6 @@ class Ui_MainWindow(object):
         self.btnAddMethodist.setText(QCoreApplication.translate("MainWindow", u"\u0414\u041e\u0411\u0410\u0412\u0418\u0422\u042c \u041c\u0415\u0422\u041e\u041b\u0418\u0427\u0415\u0421\u041a\u0418\u0415 \u041c\u0410\u0422\u0415\u0420\u0418\u0410\u041b\u042b", None))
         self.btnDelMethodist.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0414\u0410\u041b\u0418\u0422\u042c \u041c\u0415\u0422\u041e\u041b\u0418\u0427\u0415\u0421\u041a\u0418\u0415 \u041c\u0410\u0422\u0415\u0420\u0418\u0410\u041b\u042b", None))
         self.btnAddQuestion.setText(QCoreApplication.translate("MainWindow", u"\u0414\u041e\u0411\u0410\u0412\u0418\u0422\u042c \u0412\u041e\u041f\u0420\u041e\u0421", None))
-        self.btnEndCreateTest.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0410\u041a\u041e\u041d\u0427\u0418\u0422\u042c \u0422\u0415\u0421\u0422", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"\u0412\u0415\u0420\u041d\u042b\u0419 \u041e\u0422\u0412\u0415\u0422", None))
         self.rbtnAnswerFirst.setText("")
         self.rbtnAnswerSecond.setText("")
