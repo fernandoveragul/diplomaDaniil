@@ -106,7 +106,6 @@ class Application(QMainWindow, Ui_MainWindow, Files):
 
         self.btnDelTest.clicked.connect(lambda: self.__delete_file_from_files(folder_name="tests"))
 
-
     @staticmethod
     def __enable_pdf_view(pdf_widgets: list[QWebEngineView]):
         for wid in pdf_widgets:
@@ -117,7 +116,7 @@ class Application(QMainWindow, Ui_MainWindow, Files):
     # FIRST ADMIN PAGE ESSENCE #
     ############################
     def __login_admin(self):
-        path_to_login_data: str = str(Path(Path.cwd(), 'static', 'files', '.login_data.json'))
+        path_to_login_data: str = str(Path(Path.cwd(), 'static', 'files', '.load_data.json'))
         login: str = hashlib.sha256(self.ledtLogin.text().encode()).hexdigest()
         password: str = hashlib.sha256(self.ledtPassword.text().encode()).hexdigest()
 
@@ -150,7 +149,7 @@ class Application(QMainWindow, Ui_MainWindow, Files):
         def_folder: str = str(Path(Path.home()))
         try:
             cp_from: str = QFileDialog.getOpenFileName(self, "PDF файл",
-                                                       directory=def_folder,
+                                                       dir=def_folder,
                                                        filter="All Files (*);;EXAMPLES Files (*.pdf)")[0]
             shutil.copy2(cp_from, f'{Path(Path.cwd(), "static", folder_name)}')
         except FileNotFoundError:
@@ -160,7 +159,7 @@ class Application(QMainWindow, Ui_MainWindow, Files):
         def_folder: str = str(Path(Path.cwd(), "static", folder_name))
         try:
             deleting_file: str = QFileDialog.getOpenFileName(self, "Open File",
-                                                             directory=def_folder,
+                                                             dir=def_folder,
                                                              filter="All Files (*);;Tutorial or Example Files (*.pdf);;"
                                                                     "Tests Files (*.json)")[0]
             os.remove(deleting_file)

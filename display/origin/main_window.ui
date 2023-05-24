@@ -335,8 +335,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>64</width>
-                     <height>18</height>
+                     <width>98</width>
+                     <height>28</height>
                     </rect>
                    </property>
                    <layout class="QVBoxLayout" name="layExample"/>
@@ -390,8 +390,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>74</width>
-                     <height>18</height>
+                     <width>98</width>
+                     <height>28</height>
                     </rect>
                    </property>
                    <layout class="QVBoxLayout" name="layMethodist"/>
@@ -527,8 +527,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  <widget class="QGroupBox" name="gboxFileWorkers">
                   <property name="font">
                    <font>
-                    <pointsize>14</pointsize>
+                    <pointsize>16</pointsize>
                    </font>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="title">
                    <string>ФАЙЛЫ</string>
@@ -586,14 +589,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </item>
                    <item>
                     <widget class="QPushButton" name="btnAddMethodist">
-                     <property name="font">
-                      <font>
-                       <pointsize>14</pointsize>
-                       <bold>false</bold>
-                      </font>
-                     </property>
                      <property name="text">
-                      <string>ДОБАВИТЬ МЕТОДИЧЕСКИЕ МАТЕРИАЛЫ</string>
+                      <string>ДОБАВИТЬ МЕТОЛИЧЕСКИЕ МАТЕРИАЛЫ</string>
                      </property>
                     </widget>
                    </item>
