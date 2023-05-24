@@ -38,8 +38,11 @@ class Application(QMainWindow, Ui_MainWindow, Files):
                 case 'tutorials':
                     self.pdfTutorial.setUrl(QUrl.fromLocalFile(paths[ind]))
                 case 'examples':
-                    self.pdfExample.setUrl(QUrl.fromLocalFile(paths[ind]))
-                    self.path_to_test = self.paths2files('tests')[ind]
+                    try:
+                        self.pdfExample.setUrl(QUrl.fromLocalFile(paths[ind]))
+                        self.path_to_test = self.paths2files('tests')[ind]
+                    except IndexError:
+                        QMessageBox.warning(self, "ОШИБКА", "Теста для этой главы не существует")
                 case 'methodist':
                     self.pdfMethodist.setUrl(QUrl.fromLocalFile(paths[ind]))
 
