@@ -32,9 +32,9 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setPointSize(12)
         self.centralwidget.setFont(font)
-        self.gridLayout_2 = QGridLayout(self.centralwidget)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout = QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tbStudent = QWidget()
@@ -69,15 +69,15 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.scrollTutorial, 0, 0, 1, 1)
 
-        self.btnMethodsPr = QPushButton(self.pgTutorial)
-        self.btnMethodsPr.setObjectName(u"btnMethodsPr")
+        self.btnShowMethodist = QPushButton(self.pgTutorial)
+        self.btnShowMethodist.setObjectName(u"btnShowMethodist")
         sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.btnMethodsPr.sizePolicy().hasHeightForWidth())
-        self.btnMethodsPr.setSizePolicy(sizePolicy1)
+        sizePolicy1.setHeightForWidth(self.btnShowMethodist.sizePolicy().hasHeightForWidth())
+        self.btnShowMethodist.setSizePolicy(sizePolicy1)
 
-        self.gridLayout.addWidget(self.btnMethodsPr, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.btnShowMethodist, 1, 0, 1, 1)
 
         self.btnShowExample = QPushButton(self.pgTutorial)
         self.btnShowExample.setObjectName(u"btnShowExample")
@@ -414,53 +414,6 @@ class Ui_MainWindow(object):
         self.stackProfessor.addWidget(self.pgCreate)
         self.pgEdit = QWidget()
         self.pgEdit.setObjectName(u"pgEdit")
-        self.gridLayout_6 = QGridLayout(self.pgEdit)
-        self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.line_6 = QFrame(self.pgEdit)
-        self.line_6.setObjectName(u"line_6")
-        self.line_6.setFrameShape(QFrame.VLine)
-        self.line_6.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout_6.addWidget(self.line_6, 0, 1, 3, 1)
-
-        self.line_5 = QFrame(self.pgEdit)
-        self.line_5.setObjectName(u"line_5")
-        self.line_5.setFrameShape(QFrame.HLine)
-        self.line_5.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout_6.addWidget(self.line_5, 3, 0, 1, 4)
-
-        self.line_7 = QFrame(self.pgEdit)
-        self.line_7.setObjectName(u"line_7")
-        self.line_7.setFrameShape(QFrame.HLine)
-        self.line_7.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout_6.addWidget(self.line_7, 1, 2, 1, 2)
-
-        self.line_8 = QFrame(self.pgEdit)
-        self.line_8.setObjectName(u"line_8")
-        self.line_8.setFrameShape(QFrame.VLine)
-        self.line_8.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout_6.addWidget(self.line_8, 4, 1, 2, 1)
-
-        self.scrollTests = QScrollArea(self.pgEdit)
-        self.scrollTests.setObjectName(u"scrollTests")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy5.setHorizontalStretch(1)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.scrollTests.sizePolicy().hasHeightForWidth())
-        self.scrollTests.setSizePolicy(sizePolicy5)
-        self.scrollTests.setWidgetResizable(True)
-        self.areaTests = QWidget()
-        self.areaTests.setObjectName(u"areaTests")
-        self.areaTests.setGeometry(QRect(0, 0, 807, 248))
-        self.layTests = QVBoxLayout(self.areaTests)
-        self.layTests.setObjectName(u"layTests")
-        self.scrollTests.setWidget(self.areaTests)
-
-        self.gridLayout_6.addWidget(self.scrollTests, 0, 0, 3, 1)
-
         self.stackProfessor.addWidget(self.pgEdit)
 
         self.verticalLayout_2.addWidget(self.stackProfessor)
@@ -484,7 +437,7 @@ class Ui_MainWindow(object):
 
         self.tabWidget.addTab(self.btAbout, "")
 
-        self.gridLayout_2.addWidget(self.tabWidget, 0, 0, 1, 1)
+        self.verticalLayout.addWidget(self.tabWidget)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -500,7 +453,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.btnMethodsPr.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0415\u0422\u041e\u0414\u0418\u0427\u0415\u0421\u041a\u0418\u0415 \u041c\u0410\u0422\u0415\u0420\u0418\u0410\u041b\u042b", None))
+        self.btnShowMethodist.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0415\u0422\u041e\u0414\u0418\u0427\u0415\u0421\u041a\u0418\u0415 \u041c\u0410\u0422\u0415\u0420\u0418\u0410\u041b\u042b", None))
         self.btnShowExample.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0420\u0410\u041a\u0422\u0418\u041a\u0410", None))
         self.btnShowTutorial.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0415\u041e\u0420\u0418\u042f", None))
         self.btnTest.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0415\u0421\u0422", None))

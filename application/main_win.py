@@ -2,14 +2,12 @@ import hashlib
 import json
 import os
 import shutil
-import sys
 from functools import partial
 from pathlib import Path
 
 from PySide6.QtCore import QUrl
-from PySide6.QtWidgets import QMainWindow, QLayout, QPushButton, QRadioButton, QLineEdit, QStyleFactory, QMessageBox, \
-    QFileDialog
 from PySide6.QtWebEngineWidgets import QWebEngineView
+from PySide6.QtWidgets import QMainWindow, QLayout, QPushButton, QMessageBox, QFileDialog
 
 from display.main_window import Ui_MainWindow
 from .dependencies import design_style
@@ -22,14 +20,10 @@ class Application(QMainWindow, Ui_MainWindow, Files):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.path_to_test = self.paths2files('tests')[0]
+        self.path_to_test = None
         self.test_schema = dict()
-        # self.__create_buttons(self.layTutorial, 'tutorials')
-        # self.__create_buttons(self.layExample, 'examples')
-        # self.__create_buttons(self.layMethodist, 'methodist',)
-        # self.__create_buttons(self.layTests, 'tests')
-        self.__enable_all_buttons([self.layTutorial, self.layExample, self.layMethodist, self.layTests],
-                                  ['tutorials', 'examples', 'methodist', 'tests'])
+        self.__enable_all_buttons([self.layTutorial, self.layExample, self.layMethodist],
+                                  ['tutorials', 'examples', 'methodist'])
         self.__enable_pdf_view([self.pdfTutorial, self.pdfExample, self.pdfMethodist])
         self.__enable_runtime_rbuttons()
         self.__enable_funcs_in_buttons()
@@ -44,10 +38,9 @@ class Application(QMainWindow, Ui_MainWindow, Files):
                     self.pdfTutorial.setUrl(QUrl.fromLocalFile(paths[ind]))
                 case 'examples':
                     self.pdfExample.setUrl(QUrl.fromLocalFile(paths[ind]))
+                    self.path_to_test = self.paths2files('tests')[ind]
                 case 'methodist':
                     self.pdfMethodist.setUrl(QUrl.fromLocalFile(paths[ind]))
-                case 'tests':
-                    self.path_to_test = paths
 
         files: list[str] = self.files_without_extension(folder)
         btn_text = ''
@@ -89,18 +82,26 @@ class Application(QMainWindow, Ui_MainWindow, Files):
     def __enable_funcs_in_buttons(self):
         self.btnTest.clicked.connect(self.__open_window_with_current_test)
         self.btnLogin.clicked.connect(lambda: self.__login_admin())
+
         self.btnShowExample.clicked.connect(lambda: self.stckStudent.setCurrentWidget(self.pgExample))
         self.btnShowTutorial.clicked.connect(lambda: self.stckStudent.setCurrentWidget(self.pgTutorial))
+        self.btnShowMethodist.clicked.connect(lambda: self.stckStudent.setCurrentWidget(self.pgMethodist))
+        self.btnGoToStartState.clicked.connect(lambda: self.stckStudent.setCurrentWidget(self.pgTutorial))
+
         self.btnAddQuestion.clicked.connect(lambda: self.clear_text_editors(is_end=False))
         self.btnEndCreateTest.clicked.connect(lambda: self.clear_text_editors(is_end=True))
 
+        self.btnAddMethodist.clicked.connect(lambda: self.__add_file_to_files(folder_name="methodist"))
+        self.btnDelMethodist.clicked.connect(lambda: self.__delete_file_from_files(folder_name="tutorials"))
+
         self.btnAddTutorial.clicked.connect(lambda: self.__add_file_to_files(folder_name="tutorials"))
-        self.btnAddExample.clicked.connect(lambda: self.__add_file_to_files(folder_name="examples"))
         self.btnDelTutorial.clicked.connect(lambda: self.__delete_file_from_files(folder_name="tutorials"))
+
+        self.btnAddExample.clicked.connect(lambda: self.__add_file_to_files(folder_name="examples"))
         self.btnDelExample.clicked.connect(lambda: self.__delete_file_from_files(folder_name="examples"))
+
         self.btnDelTest.clicked.connect(lambda: self.__delete_file_from_files(folder_name="tests"))
 
-        self.btnGoToStartState.clicked.connect(lambda: self.stckStudent.setCurrentWidget(self.pgTutorial))
 
     @staticmethod
     def __enable_pdf_view(pdf_widgets: list[QWebEngineView]):

@@ -90,9 +90,9 @@ class Files:
     @staticmethod
     def get_gen_test_text(*, label: QTextBrowser, buttons: list[QPushButton], data: list[dict]):
         for ind_dt, dt in enumerate(data):
-            label.setText(dt.get("text"))
+            label.setText(dt.get("text_question"))
             for ind, btn in enumerate(buttons):
-                btn.setText(dt.get("answers")[ind].get("answer"))
+                btn.setText(dt.get("answers")[ind].get("text_answer"))
             yield dt
 
     @staticmethod
