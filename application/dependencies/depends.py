@@ -37,7 +37,7 @@ class Files:
 
     @staticmethod
     def load_default_test() -> dict:
-        path: str = f'{Path(Path.cwd(), "static", "tests", "schema.json")}'
+        path: str = f'{Path(Path.cwd(), "static", "files", "schema.json")}'
         with open(path, 'r') as test:
             current_test: dict = json.loads(test.read())
         return current_test

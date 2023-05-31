@@ -1,26 +1,5 @@
 {
     "time2test": 90,
     "questions": [
-        {
-            "text_question": "text",
-            "answers": [
-                {
-                    "text_answer": "text",
-                    "is_true": false
-                },
-                {
-                    "text_answer": "text",
-                    "is_true": true
-                },
-                {
-                    "text_answer": "text",
-                    "is_true": false
-                },
-                {
-                    "text_answer": "text",
-                    "is_true": false
-                }
-            ]
-        }
     ]
 }

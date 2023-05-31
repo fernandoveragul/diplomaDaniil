@@ -21,7 +21,7 @@ class Application(QMainWindow, Ui_MainWindow, Files):
         super().__init__()
         self.setupUi(self)
         self.path_to_test = None
-        self.test_schema = dict()
+        self.test_schema = self.load_default_test()
         self.__enable_all_buttons([self.layTutorial, self.layExample, self.layMethodist],
                                   ['tutorials', 'examples', 'methodist'])
         self.__enable_pdf_view([self.pdfTutorial, self.pdfExample, self.pdfMethodist])
@@ -179,7 +179,6 @@ class Application(QMainWindow, Ui_MainWindow, Files):
                                               SAnswer(text_answer=self.ledtAnswerFour.text(),
                                                       is_true=self.rbtnAnswerFour.isChecked()).dict()
                                           ]).dict()
-
         self.test_schema['questions'].append(for_adding_dictionary)
         QMessageBox.information(self, "УСПЕХ", f"Вопрос был добавлен к текущему тесту")
 
