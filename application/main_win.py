@@ -46,7 +46,8 @@ class Application(QMainWindow, Ui_MainWindow, Files):
                 case 'methodist':
                     self.pdfMethodist.setUrl(QUrl.fromLocalFile(paths[ind]))
 
-        files: list[str] = sorted(self.files_without_extension(folder))
+        files: list[str] = self.files_without_extension(folder)
+        files.sort(key=lambda x: int(x.split()[-1]))
         btn_text = ''
         for i, file in enumerate(files):
             ch_, cu = file.split('_')
