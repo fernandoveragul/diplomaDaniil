@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.0
+## Created by: Qt User Interface Compiler version 6.5.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -132,7 +132,7 @@ class Ui_MainWindow(object):
         self.scrollTutorial = QScrollArea(self.pgTutorial)
         self.scrollTutorial.setObjectName(u"scrollTutorial")
         sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
-        sizePolicy2.setHorizontalStretch(1)
+        sizePolicy2.setHorizontalStretch(2)
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.scrollTutorial.sizePolicy().hasHeightForWidth())
         self.scrollTutorial.setSizePolicy(sizePolicy2)
@@ -140,7 +140,7 @@ class Ui_MainWindow(object):
         self.scrollTutorial.setWidgetResizable(True)
         self.areaTutorial = QWidget()
         self.areaTutorial.setObjectName(u"areaTutorial")
-        self.areaTutorial.setGeometry(QRect(0, 0, 237, 467))
+        self.areaTutorial.setGeometry(QRect(0, 0, 254, 467))
         self.layTutorial = QVBoxLayout(self.areaTutorial)
         self.layTutorial.setObjectName(u"layTutorial")
         self.scrollTutorial.setWidget(self.areaTutorial)
@@ -170,12 +170,15 @@ class Ui_MainWindow(object):
 
         self.scrollExample = QScrollArea(self.pgExample)
         self.scrollExample.setObjectName(u"scrollExample")
-        sizePolicy2.setHeightForWidth(self.scrollExample.sizePolicy().hasHeightForWidth())
-        self.scrollExample.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy3.setHorizontalStretch(3)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.scrollExample.sizePolicy().hasHeightForWidth())
+        self.scrollExample.setSizePolicy(sizePolicy3)
         self.scrollExample.setWidgetResizable(True)
         self.areaExample = QWidget()
         self.areaExample.setObjectName(u"areaExample")
-        self.areaExample.setGeometry(QRect(0, 0, 147, 467))
+        self.areaExample.setGeometry(QRect(0, 0, 334, 467))
         self.layExample = QVBoxLayout(self.areaExample)
         self.layExample.setObjectName(u"layExample")
         self.scrollExample.setWidget(self.areaExample)
@@ -203,7 +206,7 @@ class Ui_MainWindow(object):
         self.scrollMethodistPr.setWidgetResizable(True)
         self.areaMethodist = QWidget()
         self.areaMethodist.setObjectName(u"areaMethodist")
-        self.areaMethodist.setGeometry(QRect(0, 0, 222, 501))
+        self.areaMethodist.setGeometry(QRect(0, 0, 254, 501))
         self.layMethodist = QVBoxLayout(self.areaMethodist)
         self.layMethodist.setObjectName(u"layMethodist")
         self.scrollMethodistPr.setWidget(self.areaMethodist)
@@ -217,11 +220,8 @@ class Ui_MainWindow(object):
 
         self.pdfMethodist = QWebEngineView(self.pgMethodist)
         self.pdfMethodist.setObjectName(u"pdfMethodist")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy3.setHorizontalStretch(3)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.pdfMethodist.sizePolicy().hasHeightForWidth())
-        self.pdfMethodist.setSizePolicy(sizePolicy3)
+        sizePolicy1.setHeightForWidth(self.pdfMethodist.sizePolicy().hasHeightForWidth())
+        self.pdfMethodist.setSizePolicy(sizePolicy1)
         self.pdfMethodist.setUrl(QUrl(u"about:blank"))
 
         self.gridLayout_7.addWidget(self.pdfMethodist, 0, 1, 3, 1)

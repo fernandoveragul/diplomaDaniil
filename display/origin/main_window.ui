@@ -251,7 +251,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  <widget class="QScrollArea" name="scrollTutorial">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                    <horstretch>1</horstretch>
+                    <horstretch>2</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
@@ -266,7 +266,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>237</width>
+                     <width>254</width>
                      <height>467</height>
                     </rect>
                    </property>
@@ -323,7 +323,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  <widget class="QScrollArea" name="scrollExample">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                    <horstretch>1</horstretch>
+                    <horstretch>3</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
@@ -335,7 +335,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>147</width>
+                     <width>334</width>
                      <height>467</height>
                     </rect>
                    </property>
@@ -378,7 +378,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  <widget class="QScrollArea" name="scrollMethodistPr">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                    <horstretch>1</horstretch>
+                    <horstretch>2</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
@@ -390,7 +390,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>222</width>
+                     <width>254</width>
                      <height>501</height>
                     </rect>
                    </property>
@@ -409,7 +409,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  <widget class="QWebEngineView" name="pdfMethodist">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                    <horstretch>3</horstretch>
+                    <horstretch>5</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>

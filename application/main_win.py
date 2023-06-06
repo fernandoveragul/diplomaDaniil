@@ -47,19 +47,19 @@ class Application(QMainWindow, Ui_MainWindow, Files):
                     self.pdfMethodist.setUrl(QUrl.fromLocalFile(paths[ind]))
 
         files: list[str] = self.files_without_extension(folder)
-        files.sort(key=lambda x: int(x.split()[-1]))
+        files.sort(key=lambda x: int(x.split('_')[-1]))
         btn_text = ''
         for i, file in enumerate(files):
-            ch_, cu = file.split('_')
+            cur_tip, cur_name, num = file.split('_')
             btn = QPushButton()
-            btn.setObjectName(f'btn{folder.capitalize()}{ch_}{cu}')
             match folder:
                 case 'tutorials':
-                    btn_text = f'ГЛАВА {cu}'
+                    btn_text = f'{num} ТЕМА {cur_name}'
                 case 'examples':
-                    btn_text = f'ЗАДАНИЕ К ГЛАВЕ {cu}'
+                    btn_text = f'{num} ЗАДАНИЕ К ГЛАВЕ {cur_name}'
                 case 'methodist':
-                    btn_text = f'МЕТОДИЧЕСКИЕ МАТЕРИАЛЫ {cu}'
+                    btn_text = f'{num} МЕТОДИЧЕСКИЕ МАТЕРИАЛЫ {cur_name}'
+            btn.setToolTip(cur_tip)
             btn.setText(btn_text)
             index = i
             btn.clicked.connect(partial(add_func, index))
