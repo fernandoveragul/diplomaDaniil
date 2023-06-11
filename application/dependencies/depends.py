@@ -15,12 +15,16 @@ class Files:
     @staticmethod
     def paths2files(folder: str) -> list[str]:
         path: str = f'{Path(Path.cwd(), "static", folder)}'
-        return [f'{Path(path, i)}' for i in os.listdir(path)]
+        paths: list = [f'{Path(path, i)}' for i in os.listdir(path)]
+        paths.sort(key=lambda x: int(x.split('.')[0].split('_')[-1]))
+        return paths
 
     @staticmethod
     def files_without_extension(folder: str) -> list[str]:
         path: str = f'{Path(Path.cwd(), "static", folder)}'
-        return list(map(lambda file_name: file_name.split('.')[0], sorted(os.listdir(path))))
+        files: list = list(map(lambda file_name: file_name.split('.')[0], sorted(os.listdir(path))))
+        files.sort(key=lambda x: int(x.split('_')[-1]))
+        return files
 
     @staticmethod
     def save_current_test(name: str, test: STest) -> None:

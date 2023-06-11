@@ -47,7 +47,6 @@ class Application(QMainWindow, Ui_MainWindow, Files):
                     self.pdfMethodist.setUrl(QUrl.fromLocalFile(paths[ind]))
 
         files: list[str] = self.files_without_extension(folder)
-        files.sort(key=lambda x: int(x.split('_')[-1]))
         btn_text = ''
         for i, file in enumerate(files):
             cur_tip, cur_name, num = file.split('_')
@@ -56,7 +55,7 @@ class Application(QMainWindow, Ui_MainWindow, Files):
                 case 'tutorials':
                     btn_text = f'{num} ТЕМА {cur_name}'
                 case 'examples':
-                    btn_text = f'{num} ЗАДАНИЕ К ГЛАВЕ {cur_name}'
+                    btn_text = f'{num} ПР {cur_name}'
                 case 'methodist':
                     btn_text = f'{num} МЕТОДИЧЕСКИЕ МАТЕРИАЛЫ {cur_name}'
             btn.setToolTip(cur_tip)
